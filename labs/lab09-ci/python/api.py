@@ -16,7 +16,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse
 
 ALPHABET = string.ascii_letters + string.digits
-LONGUEUR_CODE = 6
+LONGUEUR_CODE = 5
 TAILLE_MAX_URL = 2_048
 
 
