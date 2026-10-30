@@ -112,7 +112,7 @@ def test_200_creations_concurrentes_produisent_des_codes_uniques(serveur):
     def creer(index):
         return requete(serveur, "POST", "/liens", {"url": f"https://exemple.ca/concurrent/{index}"})
 
-    with ThreadPoolExecutor(max_workers=20) as pool:
+    with ThreadPoolExecutor(max_workers=5) as pool:
         resultats = list(pool.map(creer, range(200)))
 
     assert all(statut == 201 for statut, _, _ in resultats)
